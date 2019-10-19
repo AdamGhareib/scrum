@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Scrum project</title>
+	<meta charset="utf-8">
+	<meta name="author" content="Adam el Ghareib, Tom Samwel, Afzal Mohan">
+	<meta name="keywords" content="Project">
+	<meta name="description" content="Scrum project CSS landscapes">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
+</head>
+<body>
+	<div id="landscape">
+		<div id="sky">
+			<div id="score">0</div>
+			<div class="content">
+				<div class="cloud"></div>
+				<div class="sun">
+					<p id="credits">Adam &amp; Tom &amp; Afzal</p>
+				</div>
+				<div class="cloud x"></div>
+			</div>
+		</div>
+		<div id="grass">
+			<div id="huis">
+				<div id="triangle">
+
+				</div>
+				<div id="square">
+					<div id="window" class="windows" onclick="lights()">
+
+					</div>
+					<div id="window1" class="windows" onclick="lights1()">
+
+					</div>
+					<div id="light">
+						<button onclick="lights(), lights1()"></button>
+					</div>
+					<div id="door">
+						<div id="circle">
+						</div>
+						<div id="letter">
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="autoban">
+
+				<img id="road" src="assets/images/vertical_road.png">
+				<img class="car" src="https://i.stack.imgur.com/oT3DY.png"/>
+			</div>
+
+			<div id="forest">
+				<div id="owl">
+					<div class="mini-owl">
+						<div class="body">
+							<div class="belly"></div>
+							<div class="eye left-eye"></div>
+							<div class="eye right-eye"></div>
+							<div class="beak"></div>
+						</div>
+						<div class="wings left-wing"></div>
+						<div class="wings right-wing"></div>
+
+						<div class="left-foot"></div>
+						<div class="right-foot"></div>
+					</div>
+				</div>
+				<div class="tree" id="pine">
+					<div class="trunk"></div>
+					<div class="branch top"></div>
+					<div class="branch middle"></div>
+					<div class="branch bottom"></div>
+				</div>
+				<div class="tree" id="dennen">
+					<div class="trunk"></div>
+					<div class="branch top"></div>
+					<div class="branch middle"></div>
+					<div class="branch bottom"></div>
+				</div>
+				<div id="boom">
+				<div class="boomstam">
+					<div class="leaf leaf1"></div>
+					<div class="leaf leaf2"></div>
+					<div class="leaf leaf3"></div>
+					<div class="leaf leaf4"></div>
+					<div class="leaf leaf5"></div>
+					<div class="leaf leaf6"></div>
+					<div class="leaf leaf7"></div>
+					<div class="leaf leaf8"></div>
+
+					<script>
+						var amount = 8;
+						for(var i = 1; i < amount + 1; i++){
+							document.write('<div id="apple' + i + '" class="appel"></div>');
+						}
+					</script>
+				</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script>
+		function lights() {
+			var background = document.getElementById('window').style.background;
+
+			if (background=="yellow") {
+				document.getElementById('window').style.background = "blue";
+			}
+			else {
+				document.getElementById('window').style.background = "yellow";
+			}
+		}
+		function lights1() {
+			var background = document.getElementById('window1').style.background;
+
+			if (background=="yellow") {
+				document.getElementById('window1').style.background = "blue";
+			}
+			else {
+				document.getElementById('window1').style.background = "yellow";
+			}
+		}
+
+		var elements = document.getElementsByClassName('appel');
+
+		for(var i = 1; i < amount + 1; i++){
+			var appel = document.getElementById("apple" + i);
+			appel.onclick=function(){
+			    var score = parseInt(document.getElementById("score").innerHTML);
+			    score++;
+			    this.style.visibility = "hidden";
+			    document.getElementById("score").innerHTML = score;
+			}
+		}
+	</script>
+</body>
+</html>
